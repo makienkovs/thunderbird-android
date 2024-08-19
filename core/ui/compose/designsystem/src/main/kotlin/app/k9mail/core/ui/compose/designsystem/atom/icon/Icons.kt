@@ -1,71 +1,87 @@
 package app.k9mail.core.ui.compose.designsystem.atom.icon
 
-import androidx.compose.material.icons.automirrored.outlined.ArrowBack
-import androidx.compose.material.icons.filled.Cancel
-import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Outbox
-import androidx.compose.material.icons.filled.VisibilityOff
-import androidx.compose.material.icons.outlined.AccountCircle
-import androidx.compose.material.icons.outlined.Check
-import androidx.compose.material.icons.outlined.ErrorOutline
-import androidx.compose.material.icons.outlined.ExpandLess
-import androidx.compose.material.icons.outlined.ExpandMore
-import androidx.compose.material.icons.outlined.Inbox
-import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material.icons.outlined.Menu
-import androidx.compose.material.icons.outlined.Security
-import androidx.compose.material.icons.outlined.Visibility
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.material.icons.Icons as MaterialIcons
+import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.tooling.preview.Preview
+import app.k9mail.core.ui.legacy.designsystem.atom.icon.Icons as LegacyIcons
+import app.k9mail.core.ui.compose.designsystem.atom.icon.icons.Info as VectorIconsInfo
+import app.k9mail.core.ui.compose.designsystem.atom.icon.icons.Check as VectorIconsCheck
 
 // We're using getters so not all icons are loaded into memory as soon as one of the nested objects is accessed.
 object Icons {
+    object Default {
+        val Info = VectorIconsInfo
+        val Check = VectorIconsCheck
+    }
+
     object Filled {
         val CheckCircle: ImageVector
-            get() = MaterialIcons.Filled.CheckCircle
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Filled.Check)
 
         val Cancel: ImageVector
-            get() = MaterialIcons.Filled.Cancel
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Filled.Close)
     }
 
     object Outlined {
         val AccountCircle: ImageVector
-            get() = MaterialIcons.Outlined.AccountCircle
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.AccountCircle)
 
         val ArrowBack: ImageVector
-            get() = MaterialIcons.AutoMirrored.Outlined.ArrowBack
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.ArrowBack)
 
         val Check: ImageVector
-            get() = MaterialIcons.Outlined.Check
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.Check)
 
         val ErrorOutline: ImageVector
-            get() = MaterialIcons.Outlined.ErrorOutline
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.Error)
 
         val ExpandMore: ImageVector
-            get() = MaterialIcons.Outlined.ExpandMore
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.ExpandMore)
 
         val ExpandLess: ImageVector
-            get() = MaterialIcons.Outlined.ExpandLess
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.ExpandLess)
 
         val Inbox: ImageVector
-            get() = MaterialIcons.Outlined.Inbox
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.Inbox)
 
         val Info: ImageVector
-            get() = MaterialIcons.Outlined.Info
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.Info)
 
         val Menu: ImageVector
-            get() = MaterialIcons.Outlined.Menu
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.Menu)
 
         val Outbox: ImageVector
-            get() = MaterialIcons.Filled.Outbox
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.Outbox)
 
         val Security: ImageVector
-            get() = MaterialIcons.Outlined.Security
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.Security)
 
         val Visibility: ImageVector
-            get() = MaterialIcons.Outlined.Visibility
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.Visibility)
 
         val VisibilityOff: ImageVector
-            get() = MaterialIcons.Filled.VisibilityOff
+            @Composable
+            get() = ImageVector.vectorResource(id = LegacyIcons.Outlined.VisibilityOff)
     }
+}
+
+@Composable
+@Preview(showBackground = true)
+private fun ImagePreview() {
+    Icon(imageVector = IconsWithBottomRightOverlay.person.image)
 }

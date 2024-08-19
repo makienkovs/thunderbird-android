@@ -96,6 +96,7 @@ object Icons {
         val TouchApp = R.drawable.ic_touch_app
         val Upload = R.drawable.ic_upload
         val Visibility = R.drawable.ic_visibility
+        val VisibilityOff = R.drawable.ic_visibility_off
         val Warning = R.drawable.ic_warning
     }
 }

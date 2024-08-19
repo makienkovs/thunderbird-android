@@ -131,6 +131,18 @@ android {
         }
     }
 
+    flavorDimensions += "version"
+
+    productFlavors {
+        create("mos") {
+            dimension = "version"
+            isDefault = true
+//            applicationId = "ru.mos.mt.mail"
+//            versionCode = 1
+            versionName = "1.00"
+        }
+    }
+
     packaging {
         jniLibs {
             excludes += listOf("kotlin/**")
@@ -148,5 +160,6 @@ android {
 }
 
 dependencyGuard {
-    configuration("releaseRuntimeClasspath")
+//    configuration("releaseRuntimeClasspath")
+    configuration("mosReleaseRuntimeClasspath")
 }

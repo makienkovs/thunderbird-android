@@ -4,6 +4,15 @@ plugins {
 
 android {
     namespace = "app.k9mail.core.ui.legacy.designsystem"
+
+    flavorDimensions += "version"
+
+    productFlavors {
+        create("mos") {
+            dimension = "version"
+            isDefault = true
+        }
+    }
 }
 
 dependencies {

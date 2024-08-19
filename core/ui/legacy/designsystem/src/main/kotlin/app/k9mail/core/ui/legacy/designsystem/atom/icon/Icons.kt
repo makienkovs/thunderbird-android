@@ -12,6 +12,8 @@ import app.k9mail.core.ui.legacy.designsystem.R
 object Icons {
     object Filled {
         val Star = R.drawable.ic_star_filled
+        val Check = R.drawable.ic_check_circle_filled
+        val Close = R.drawable.ic_close_circle_filled
     }
 
     object Outlined {

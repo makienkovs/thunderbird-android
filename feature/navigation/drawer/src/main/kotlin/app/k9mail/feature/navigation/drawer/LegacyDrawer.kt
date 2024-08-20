@@ -97,7 +97,7 @@ class LegacyDrawer(
 
         selectionListEnabledForSingleProfile = false
         height = DimenHolder.fromDp(150)
-        background = ContextCompat.getDrawable(context, R.color.status_bar)
+        background = ContextCompat.getDrawable(context, R.color.navigation_drawer_status_bar)
         typeface = typefaceGolos
     }
     private val swipeRefreshLayout: SwipeRefreshLayout

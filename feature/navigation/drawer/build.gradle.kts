@@ -5,6 +5,15 @@ plugins {
 android {
     namespace = "app.k9mail.feature.navigation.drawer"
     resourcePrefix = "navigation_drawer_"
+
+    flavorDimensions += "version"
+
+    productFlavors {
+        create("mos") {
+            dimension = "version"
+            isDefault = true
+        }
+    }
 }
 
 dependencies {

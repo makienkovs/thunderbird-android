@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import android.content.IntentSender.SendIntentException
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Parcelable
 import android.os.SystemClock
@@ -248,6 +249,7 @@ class MessageViewFragment :
             }
 
             val drawable = ContextCompat.getDrawable(requireContext(), drawableId)
+            drawable?.setTint(Color.WHITE)
             menu.findItem(R.id.toggle_unread).icon = drawable
         }
 

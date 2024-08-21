@@ -55,4 +55,13 @@ android {
     buildFeatures {
         buildConfig = true
     }
+
+    flavorDimensions += "version"
+
+    productFlavors {
+        create("mos") {
+            dimension = "version"
+            isDefault = true
+        }
+    }
 }

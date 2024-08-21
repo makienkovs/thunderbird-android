@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_webpage_url" translatable="false">#</string>
+    <string name="user_manual_url" translatable="false">#</string>
+    <string name="user_forum_url" translatable="false">#</string>
+    <string name="message_header_mua" translatable="false">#</string>
+    <string name="app_authors_url" translatable="false">#</string>
+    <string name="app_source_url" translatable="false">#</string>
+    <string name="app_license_url" translatable="false">#</string>
+</resources>

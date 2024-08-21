@@ -8,6 +8,15 @@ android {
     buildFeatures {
         aidl = true
     }
+
+    flavorDimensions += "version"
+
+    productFlavors {
+        create("mos") {
+            dimension = "version"
+            isDefault = true
+        }
+    }
 }
 
 dependencies {

@@ -20,7 +20,7 @@ class AutocryptPreferEncryptDialogFragment : PreferenceDialogFragmentCompat() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val view = layoutInflater.inflate(R.layout.dialog_autocrypt_prefer_encrypt, null)
 
-        view.findViewById<MaterialTextView>(R.id.prefer_encrypt_learn_more).makeLinksClickable()
+//        view.findViewById<MaterialTextView>(R.id.prefer_encrypt_learn_more).makeLinksClickable()
 
         preferEncryptCheckbox = view.findViewById<MaterialCheckBox>(R.id.prefer_encrypt_check).apply {
             isChecked = preferEncryptPreference.isPreferEncryptEnabled

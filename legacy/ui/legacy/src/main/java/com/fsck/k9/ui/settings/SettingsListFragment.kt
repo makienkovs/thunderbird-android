@@ -145,7 +145,7 @@ class SettingsListFragment : Fragment(), ItemTouchCallback {
     private fun handleItemClick(item: GenericItem) {
         when (item) {
             is AccountItem -> launchAccountSettings(item.account)
-            is UrlActionItem -> openUrl(item.url)
+            is UrlActionItem -> if (!item.url.startsWith("#")) openUrl(item.url)
             is SettingsActionItem -> findNavController().navigate(item.navigationAction)
         }
     }

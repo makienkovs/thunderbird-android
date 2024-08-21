@@ -37,31 +37,33 @@ class AboutFragment : Fragment() {
         versionTextView.text = getVersionNumber()
 
         val versionLayout = view.findViewById<View>(R.id.versionLayout)
-        versionLayout.setOnClickListener { displayChangeLog() }
+        versionLayout.setOnClickListener {
+//            displayChangeLog()
+        }
 
         val authorsLayout = view.findViewById<View>(R.id.authorsLayout)
         authorsLayout.setOnClickListener {
-            openUrl(getString(R.string.app_authors_url))
+//            openUrl(getString(R.string.app_authors_url))
         }
 
         val licenseLayout = view.findViewById<View>(R.id.licenseLayout)
         licenseLayout.setOnClickListener {
-            openUrl(getString(R.string.app_license_url))
+//            openUrl(getString(R.string.app_license_url))
         }
 
         val sourceCodeLayout = view.findViewById<View>(R.id.sourceCodeLayout)
         sourceCodeLayout.setOnClickListener {
-            openUrl(getString(R.string.app_source_url))
+//            openUrl(getString(R.string.app_source_url))
         }
 
         val websiteLayout = view.findViewById<View>(R.id.websiteLayout)
         websiteLayout.setOnClickListener {
-            openUrl(getString(R.string.app_webpage_url))
+//            openUrl(getString(R.string.app_webpage_url))
         }
 
         val userForumLayout = view.findViewById<View>(R.id.userForumLayout)
         userForumLayout.setOnClickListener {
-            openUrl(getString(R.string.user_forum_url))
+//            openUrl(getString(R.string.user_forum_url))
         }
 
         val manager = LinearLayoutManager(view.context)
@@ -213,7 +215,7 @@ private class LibrariesAdapter(private val dataset: Array<Library>) :
         holder.name.text = library.name
         holder.license.text = library.license
         holder.itemView.setOnClickListener {
-            holder.itemView.context.openUrl(library.url)
+//            holder.itemView.context.openUrl(library.url)
         }
     }
 

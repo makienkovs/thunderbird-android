@@ -9,6 +9,7 @@ android {
 
 dependencies {
     api(projects.core.ui.compose.theme2.common)
+    api(projects.core.ui.legacy.designsystem)
 
     debugApi(projects.core.ui.compose.theme2.k9mail)
     debugApi(projects.core.ui.compose.theme2.thunderbird)

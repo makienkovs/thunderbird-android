@@ -145,8 +145,31 @@ android {
             )
         }
     }
+
+    flavorDimensions += "version"
+
+    productFlavors {
+        create("mos") {
+            dimension = "version"
+            isDefault = true
+            applicationId = "ru.mos.mt.mail"
+            versionNameSuffix = "-1.00"
+        }
+    }
+
+    applicationVariants.all {
+        val variant = this
+        variant.outputs
+            .map { it as com.android.build.gradle.internal.api.BaseVariantOutputImpl }
+            .forEach { output ->
+                val outputFileName = "mt-mail-client-${variant.versionName}.apk"
+                println("OutputFileName: $outputFileName")
+                output.outputFileName = outputFileName
+            }
+    }
 }
 
 dependencyGuard {
-    configuration("releaseRuntimeClasspath")
+    //    configuration("releaseRuntimeClasspath")
+    configuration("mosReleaseRuntimeClasspath")
 }

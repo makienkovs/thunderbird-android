@@ -8,6 +8,11 @@ android {
     buildFeatures {
         aidl = true
     }
+
+    flavorDimensions += "version"
+    productFlavors {
+        register("mos")
+    }
 }
 
 dependencies {

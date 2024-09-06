@@ -22,4 +22,9 @@ dependencies {
 
 android {
     namespace = "com.fsck.k9.ui.base"
+
+    flavorDimensions += "version"
+    productFlavors {
+        register("mos")
+    }
 }

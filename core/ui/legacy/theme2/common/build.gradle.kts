@@ -4,6 +4,11 @@ plugins {
 
 android {
     namespace = "app.k9mail.core.ui.legacy.theme2.common"
+
+    flavorDimensions += "version"
+    productFlavors {
+        register("mos")
+    }
 }
 
 dependencies {

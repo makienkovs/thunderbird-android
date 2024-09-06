@@ -9,6 +9,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -31,6 +33,7 @@ import app.k9mail.legacy.ui.theme.ThemeManager
 import com.fsck.k9.K9
 import com.fsck.k9.ui.base.livedata.observeNotNull
 import com.mikepenz.materialdrawer.holder.BadgeStyle
+import com.mikepenz.materialdrawer.holder.DimenHolder
 import com.mikepenz.materialdrawer.holder.ImageHolder
 import com.mikepenz.materialdrawer.model.DividerDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
@@ -62,7 +65,7 @@ private const val STARRED_SYMBOL = "\u2605"
 private const val THIN_SPACE = "\u2009"
 private const val EN_SPACE = "\u2000"
 
-@Suppress("MagicNumber", "TooManyFunctions", "LongParameterList")
+@Suppress("MagicNumber", "TooManyFunctions", "LongParameterList", "UnusedPrivateMember", "UnusedPrivateProperty", "MaxLineLength")
 class LegacyDrawer(
     override val parent: AppCompatActivity,
     private val openFolders: () -> Unit,
@@ -83,11 +86,19 @@ class LegacyDrawer(
     private val folderIconProvider: FolderIconProvider by inject()
 
     private val drawer: DrawerLayout = parent.findViewById(R.id.navigation_drawer_layout)
+    private val typefaceGolos = ResourcesCompat.getFont(
+        parent,
+        app.k9mail.core.ui.legacy.theme2.common.R.font.golos_text,
+    )
     private val sliderView: MaterialDrawerSliderView = parent.findViewById(R.id.material_drawer_slider)
     private val headerView: AccountHeaderView = AccountHeaderView(parent).apply {
         attachToSliderView(this@LegacyDrawer.sliderView)
         dividerBelowHeader = false
         displayBadgesOnCurrentProfileImage = false
+        selectionListEnabledForSingleProfile = false
+        height = DimenHolder.fromDp(150)
+        background = ContextCompat.getDrawable(context, R.color.navigation_drawer_status_bar)
+        typeface = typefaceGolos
     }
     private val swipeRefreshLayout: SwipeRefreshLayout
 
@@ -262,10 +273,11 @@ class LegacyDrawer(
                         textColorStateList = selectedTextColor
                     }
                 }
+                typeface = typefaceGolos
             }
 
             if (account.uuid == openedAccountUuid) {
-                initializeWithAccountColor(account)
+//                initializeWithAccountColor(account)
                 newActiveProfile = accountItem
             }
 
@@ -292,6 +304,7 @@ class LegacyDrawer(
                 iconRes = Icons.Outlined.Folder
                 identifier = DRAWER_ID_FOLDERS
                 isSelectable = false
+                typeface = typefaceGolos
             },
         )
 
@@ -301,6 +314,7 @@ class LegacyDrawer(
                 iconRes = Icons.Outlined.Settings
                 identifier = DRAWER_ID_PREFERENCES
                 isSelectable = false
+                typeface = typefaceGolos
             },
         )
     }
@@ -311,7 +325,7 @@ class LegacyDrawer(
 
     override fun updateUserAccountsAndFolders(account: Account?) {
         if (account != null) {
-            initializeWithAccountColor(account)
+//            initializeWithAccountColor(account)
             headerView.setActiveProfile(account.drawerId)
             foldersViewModel.loadFolders(account)
         }
@@ -369,27 +383,27 @@ class LegacyDrawer(
             return
         }
 
-        folderList.unifiedInbox?.let { unifiedInbox ->
-            val unifiedInboxItem = PrimaryDrawerItem().apply {
-                iconRes = Icons.Outlined.AllInbox
-                identifier = DRAWER_ID_UNIFIED_INBOX
-                nameRes = R.string.navigation_drawer_unified_inbox_title
-                selectedColorInt = selectedBackgroundColor
-                textColor = selectedTextColor
-                isSelected = unifiedInboxSelected
-                buildBadgeText(unifiedInbox)?.let { text ->
-                    badgeText = text
-                    badgeStyle = folderBadgeStyle
-                }
-            }
-
-            sliderView.addItems(unifiedInboxItem)
-            sliderView.addItems(FixedDividerDrawerItem(identifier = DRAWER_ID_DIVIDER))
-
-            if (unifiedInboxSelected) {
-                openedFolderDrawerId = DRAWER_ID_UNIFIED_INBOX
-            }
-        }
+//        folderList.unifiedInbox?.let { unifiedInbox ->
+//            val unifiedInboxItem = PrimaryDrawerItem().apply {
+//                iconRes = Icons.Outlined.AllInbox
+//                identifier = DRAWER_ID_UNIFIED_INBOX
+//                nameRes = R.string.integrated_inbox_title
+//                selectedColorInt = selectedBackgroundColor
+//                textColor = selectedTextColor
+//                isSelected = unifiedInboxSelected
+//                buildBadgeText(unifiedInbox)?.let { text ->
+//                    badgeText = text
+//                    badgeStyle = folderBadgeStyle
+//                }
+//            }
+//
+//            sliderView.addItems(unifiedInboxItem)
+//            sliderView.addItems(FixedDividerDrawerItem(identifier = DRAWER_ID_DIVIDER))
+//
+//            if (unifiedInboxSelected) {
+//                openedFolderDrawerId = DRAWER_ID_UNIFIED_INBOX
+//            }
+//        }
 
         val accountOffset = folderList.accountId.toLong() shl DRAWER_ACCOUNT_SHIFT
         for (displayFolder in folderList.folders) {
@@ -407,6 +421,7 @@ class LegacyDrawer(
                 }
                 selectedColorInt = selectedBackgroundColor
                 textColor = selectedTextColor
+                typeface = typefaceGolos
             }
 
             sliderView.addItems(drawerItem)
@@ -560,6 +575,7 @@ private fun Context.obtainDrawerTextColor(): Int {
     return textColor
 }
 
+@Suppress("UnusedPrivateClass")
 private class FixedDividerDrawerItem(override var identifier: Long) : DividerDrawerItem()
 
 // We ellipsize long folder names in the middle for better readability

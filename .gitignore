@@ -41,3 +41,6 @@ captures/
 
 # Mac thumbnail db
 .DS_Store
+
+#MOS Sourses
+mos/

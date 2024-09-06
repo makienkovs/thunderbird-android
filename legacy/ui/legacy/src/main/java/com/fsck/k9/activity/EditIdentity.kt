@@ -146,6 +146,7 @@ class EditIdentity : K9Activity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        super.onPrepareOptionsMenu(menu)
         menu.findItem(R.id.edit_identity_save).isEnabled = isSaveActionEnabled
         return true
     }

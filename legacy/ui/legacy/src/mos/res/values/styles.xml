@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ComposeTextLabel" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="ComposeEditText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColorHint">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="RecipientEditText" parent="ComposeEditText">
+        <item name="android:lineSpacingExtra">4dp</item>
+    </style>
+
+    <style name="MessageComposeHighlight">
+        <item name="highlightBackgroundColor">#99444444</item>
+    </style>
+
+    <style name="PositiveBulletPoint">
+        <item name="srcCompat">@drawable/ic_add_circle</item>
+        <item name="android:tint">?attr/tintColorBulletPointPositive</item>
+    </style>
+
+    <style name="NeutralBulletPoint">
+        <item name="srcCompat">@drawable/ic_adjust</item>
+        <item name="android:tint">?attr/tintColorBulletPointNeutral</item>
+    </style>
+
+    <style name="NegativeBulletPoint">
+        <item name="srcCompat">@drawable/ic_do_not_disturb_on</item>
+        <item name="android:tint">?attr/tintColorBulletPointNegative</item>
+    </style>
+
+    <style name="ActionModeStyle" parent="Base.Widget.Material3.ActionMode">
+        <item name="background">@color/status_bar</item>
+        <item name="titleTextStyle">@style/BaseTitleTextAppearance</item>
+    </style>
+
+    <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
+        <item name="android:background">@color/status_bar</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="android:theme">@style/BaseToolbarTheme</item>
+        <item name="titleTextAppearance">@style/BaseTitleTextAppearance</item>
+        <item name="subtitleTextAppearance">@style/BaseSubTitleTextAppearance</item>
+    </style>
+
+    <style name="BaseToolbarTheme">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+
+    <style name="BaseTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="BaseSubTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="OverflowButtonStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@android:color/white</item>
+    </style>
+
+    <style name="Widget.App.ActionMode.PopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:background">?attr/colorSurfaceContainer</item>
+    </style>
+
+    <style name="Widget.MaterialDrawerStyle.K9" parent="Widget.MaterialDrawerStyle">
+        <item name="materialDrawerBackground">?android:colorBackground</item>
+        <item name="materialDrawerPrimaryText">?android:textColorPrimary</item>
+        <item name="materialDrawerPrimaryIcon">?android:textColorSecondary</item>
+        <item name="materialDrawerSecondaryText">?android:textColorSecondary</item>
+        <item name="materialDrawerSecondaryIcon">?android:textColorSecondary</item>
+        <item name="materialDrawerSelectedBackgroundColor">?android:textColorTertiary</item>
+        <item name="materialDrawerDividerColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="Widget.MaterialDrawerStyle.K9.Light" parent="Widget.MaterialDrawerStyle.K9">
+        <item name="materialDrawerInsetForeground">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.MaterialDrawerStyle.K9.Dark" parent="Widget.MaterialDrawerStyle.K9">
+        <item name="materialDrawerInsetForeground">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.MaterialDrawerHeaderStyle.K9">
+        <item name="materialDrawerCompactStyle">false</item>
+    </style>
+
+    <style name="Widget.MaterialDrawerHeaderStyle.K9.Light" parent="Widget.MaterialDrawerHeaderStyle.K9">
+        <item name="materialDrawerHeaderSelectionText">?android:textColorPrimaryInverse</item>
+        <item name="materialDrawerHeaderSelectionSubtext">?android:textColorSecondaryInverse</item>
+    </style>
+
+    <style name="Widget.MaterialDrawerHeaderStyle.K9.Dark" parent="Widget.MaterialDrawerHeaderStyle.K9">
+        <item name="materialDrawerHeaderSelectionText">?android:textColorPrimary</item>
+        <item name="materialDrawerHeaderSelectionSubtext">?android:textColorSecondary</item>
+    </style>
+
+    <style name="AttachmentView" parent="">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="AttachmentCard" parent="">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+</resources>
+
